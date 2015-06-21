@@ -1,4 +1,5 @@
 <?php
+namespace buksy\Money;
 
 class Money
 {
