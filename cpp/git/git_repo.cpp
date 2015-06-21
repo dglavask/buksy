@@ -1,12 +1,13 @@
 #include "git_repo.h"
+#include "incl_git2.h"
 
-extern "C" {
-	#include "/var/libgit2/include/git2.h"
-}
 
 git_repo::git_repo(std::string name){
+	git_libgit2_init();
+
 }
 
 git_repo::~git_repo(){
+	git_libgit2_shutdown();
 
 }

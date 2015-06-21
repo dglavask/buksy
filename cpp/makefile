@@ -20,8 +20,13 @@ lib_dirs_include := $(lib_dirs:%=-L%)
 static_lib_linking := $(static_libs:%=-l%)
 lib_flags:= $(lib_dirs_include) $(static_lib_linking)
 
-override CXXFLAGS += $(include_dir_flag) $(mflags) $(cpp_version) $(default_options)
 
+ifdef lib_git_header_path
+	mflags += -DLIB_GIT_HEADER=$(lib_git_header_path)
+endif
+
+
+override CXXFLAGS += $(include_dir_flag) $(mflags) $(cpp_version) $(default_options)
 
 $(program_name) : compilation
 	@echo linkam u program: $@
