@@ -15,7 +15,7 @@ class MoneyTest extends \PHPUnit_Framework_TestCase
         $b = $a->negate();
 
         // Assert test
-        $this->assertEquals(-1, $b->getAmount());
+        $this->assertEquals(1, $b->getAmount());
     }
 
 }
