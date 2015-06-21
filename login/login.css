@@ -1,0 +1,24 @@
+input[name=username]{
+  padding: 10px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+}
+
+input[name=password]{
+  padding: 10px;
+  border: solid 1px #dcdcdc;
+  transition: box-shadow 0.3s, border 0.3s;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+form {
+  border : 1px solid #000;
+  padding : 5px;
+  background-color : #55ff66; 
+} 
+
+body {
+    /*background-image: url("paper.gif");*/
+    background-color: #cccccc;
+} 

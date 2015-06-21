@@ -1,0 +1,5 @@
+1. Creating a repository
+2. Showing which workflow is currently in used
+3. Show the number of contributors
+4. Show the commit access for each user
+5. Show commit guidelines
