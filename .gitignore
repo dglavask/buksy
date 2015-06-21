@@ -1,0 +1,5 @@
+cpp/build/
+**/*.swp
+**/.ycm*
+cpp/git_repo
+.vimrc
