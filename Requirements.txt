@@ -4,3 +4,4 @@
 4. Show the commit access for each user
 5. Show commit guidelines
 6. Easy list of all hooks
+7. Build workflows
