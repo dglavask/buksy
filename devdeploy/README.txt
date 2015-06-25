@@ -1,2 +1,3 @@
-The createvhost.sh script should be run only one time.
-It is used to set up the virtual apache host used for buksy developing.
+When installing for the first time run the devdeploy.sh only once.
+This will set up the www.buksy.dev virtual apache server. It will also setup the buksydba mysql user and the buksydb database.
+The buksydba can only access buksydb. Buksy password is buksy.
