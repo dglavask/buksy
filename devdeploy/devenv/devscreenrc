@@ -1,0 +1,10 @@
+# don't display the copyright page
+startup_message off
+
+# increase scrollback buffer size
+defscrollback 10000
+
+# create windows
+screen -t VIM bash -c "vim; $SHELL"
+chdir src
+screen -t run
