@@ -14,7 +14,7 @@ if [ $num_of_monitors -eq 1 ]
 then
 	echo "Number of connected monitors is $num_of_monitors"
 	echo -n "Select a working directory and press [ENTER]:"
-	read working_dir
+	read -e working_dir
 	working_dir=${working_dir//\~/$HOME}
 	if [ -d "$working_dir" ]
 	then
