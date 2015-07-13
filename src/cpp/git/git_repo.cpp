@@ -7,12 +7,13 @@ extern "C"{
 	#include <sys/stat.h>
 }
 
-git_repo::git_repo(std::string name):file_system(name),repo(nullptr){	
+git_repo::git_repo(std::string name):file_system(name),repo(nullptr)
+{	
 	git_libgit2_init();
 	if(!checkForRepo(name)){
 		log("creating repository "+name);
 		init(name);
-		}
+	}
 	log("loading repository " + name);
 }
 

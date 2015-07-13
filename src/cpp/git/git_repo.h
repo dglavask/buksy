@@ -6,6 +6,9 @@
 #include "incl_git2.h"
 #include <exception>
 
+
+class file_system;
+
 class git_repo:public file_system{
 public:
 	git_repo(std::string);
@@ -15,7 +18,6 @@ private:
 	bool init(std::string);
 	void log(std::string);
 	git_repository* repo;
-	
 };
 
 class git_exception:public std::exception{

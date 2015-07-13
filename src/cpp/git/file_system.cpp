@@ -12,6 +12,7 @@ extern "C"{
 typedef struct stat path_info;
 
 file_system::file_system(){
+	
 	working_dir_ = getWorkingDir_();
 }
 
@@ -20,15 +21,14 @@ file_system::file_system(std::string working_dir){
 		file_system();
 	}else{
 		int i = working_dir.compare(0,1,"/");
-		int j = working_dir.compare(0,2,"~/"); // conversion to absolute path required
 		if(i == 0){ 
 			working_dir_ = working_dir; 
 		}else{ 
 			working_dir_ = getWorkingDir_()+ "/" + working_dir;	
 		}
+		
 		createDir(working_dir_);		
 	}
-
 } 
 
 file_system::~file_system(){
@@ -64,7 +64,7 @@ bool file_system::dirExists(std::string path){
 }
 
 void file_system::throwErrno(){
-		throw std::system_error(std::error_code(errno,std::system_category()));  	
+		throw std::system_error(std::error_code(errno,std::system_category()),getWorkingDir());  	
 }
 
 bool file_system::createDir(std::string path){
