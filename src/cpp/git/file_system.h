@@ -13,6 +13,7 @@ public:
 	bool createDir(std::string);
 	bool deleteDir(std::string);
 	std::string getWorkingDir();
+	void setWorkingDir(const std::string&);
 
 private:
 	bool createDirNoCheck(std::string);

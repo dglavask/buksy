@@ -1,0 +1,66 @@
+WARNING: this is only for demonstration purposes and as such should not be used in
+any real code, as it is unfinished and unsafe. 
+
+
+INSTRUCTIONS:
+
+please make sure that you have properly built libgit2.so and installed in some
+default lib search paths on your system. If you do not wish to install libgit2.so
+in some default search path modify config.m4 as :
+
+delete or comment:
+
+	PHP_ADD_LIBRARY(git2,1,GIT_REPO_MOD_SHARED_LIBADD)
+
+add:
+
+	PHP_ADD_LIBRARY_WITH_PATH(git2,PATH_TO_LIB_FOLDER,GIT_REPO_MOD_SHARED_LIBADD)
+
+replace PATH_TO_LIB_FOLDER with path to folder where your lib resides
+
+you may also modify path in:
+
+	CXXFLAGS="$CXXFLAGS -DLIB_GIT_HEADER=/var/libgit2/include/git2.h"
+
+to one where your git2.h resides
+
+TO BUILD:
+	cd to zend_ext/ folder
+run:
+	phpize
+	./coonfigure --enable-git_repo_mod
+	make
+
+if you wish to install extension in standard php estension (THIS IS NOT RECOMENDED FOR
+ DEVELOPERS) run:
+
+	sudo make install
+
+it is not recommended for developers because you are expected to build this extension
+regurarly and it is nuisance to run this command every time you do so.
+
+TO ENABLE:
+
+add to your php.ini file:
+	
+	extension=git_repo_mod.so
+
+or if you haven't run sudo make install add:
+
+	extension=PATH_TO_BUKSY/buksy/src/cpp/zend_ext/modules/git_repo_mod.so
+
+make sure you have added this to your php.ini file usually found in /etc/php5/apache2/ 
+
+DO NOT include this extension by making additional .ini file in /etc/php5/apache2/conf.d/
+this may or may not work, and at this time it STRONGLY recomended not to do it as couse
+of strange behaviour is not known
+
+TO CLEAN:
+
+run in this order:
+	make clean
+	phpize --clean
+
+please note that this will also delete extension .so if it hasn't been moved
+
+
